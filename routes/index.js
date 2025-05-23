@@ -23,6 +23,7 @@ const filterProduct = require('../controller/product/filterProduct')
 const forgotPassword = require('../controller/user/forgotPassword')
 const resetPassword = require('../controller/user/resetPassword')
 const resetSubmitPassword = require('../controller/user/resetSubmitPassword')
+const paymentController = require('../controller/order/paymentController')
 
 const router=express.Router()
 
@@ -67,5 +68,10 @@ router.get('/search',searchProduct)
 router.post('/forgotPassword',forgotPassword)
 router.get('/randomToken/:token',resetPassword)
 router.post('/randomToken/:token',resetSubmitPassword)
+
+
+//payment and order
+
+router.post('/payment',checkToken,paymentController)
 
 module.exports =router

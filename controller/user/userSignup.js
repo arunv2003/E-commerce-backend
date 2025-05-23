@@ -5,6 +5,9 @@ const register =async(req, res) => {
     try {
         const {name,email, password,profilePic }=req.body
 
+
+        console.log(name,email, password,profilePic)
+
         if (!name) {
             return res.json({ message: "name is required", success: false });
         }
